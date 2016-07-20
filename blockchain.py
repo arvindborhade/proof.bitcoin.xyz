@@ -8,7 +8,7 @@ import json
 import base64
 import urllib
 from random import random
-from Crypto.Cipher import AES
+#from Crypto.Cipher import AES
 from pycoin.tx.script import tools
 from pycoin.services import blockchain_info
 from pycoin.encoding import wif_to_secret_exponent,\
@@ -16,7 +16,7 @@ from pycoin.encoding import wif_to_secret_exponent,\
 from pycoin.tx import UnsignedTx, SecretExponentSolver, TxOut
 from secrets import BLOCKCHAIN_WALLET_GUID, BLOCKCHAIN_PASSWORD_1, BLOCKCHAIN_PASSWORD_2, CALLBACK_SECRET,\
   BLOCKCHAIN_ENCRYPTED_WALLET, PAYMENT_PRIVATE_KEY, PAYMENT_ADDRESS
-from Crypto.Protocol.KDF import PBKDF2
+#from Crypto.Protocol.KDF import PBKDF2
 import io
 import binascii
 from pycoin.tx.UnsignedTx import UnsignedTxOut
