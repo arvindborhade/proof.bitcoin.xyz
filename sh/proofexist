@@ -18,9 +18,9 @@
 #                   15db6dbff590000ea13246e1c166802b690663c4e0635bfca78049d5a8762832
 #                   "timestamp":"2015-09-28 18:16:50"
 #                   "blockstamp":"2015-09-28 19:32:54"
-#                   https://proofofexistence.com/detail/15db6[...]62832
+#                   https://proof.bitcoin.xyz/detail/15db6[...]62832
 #
-#    Dependencies:  API at https://proofofexistence.com/developers
+#    Dependencies:  API at https://proof.bitcoin.xyz/developers
 #
 #  CHANGE LOG  LATEST version available:   https://git.io/victor
 #  2015-11-04  Die or warn if hash length is not exactly 64.
@@ -104,7 +104,7 @@ echo "$hash"
 
 #  Given hash argument, try to REGISTER it:
 curl --silent -d d="$hash"                           \
-     https://www.proofofexistence.com/api/v1/register > $memf
+     https://proof.bitcoin.xyz/api/v1/register > $memf
 
 
 #  If hash is already registered, get STATUS:
@@ -114,7 +114,7 @@ if grep '"reason":"existing"' $memf > /dev/null ; then
 
      #  Get ONLY the timestamp and blockstamp:
      curl --silent -d d="$hash"                           \
-          https://www.proofofexistence.com/api/v1/status   > $mem2
+          https://proof.bitcoin.xyz/api/v1/status   > $mem2
      echo >> $mem2
      sed  -e 's/^.*timestamp/"timestamp/'   -e 's/,.*$//' \
           -e 's/}$//'  $mem2
@@ -132,7 +132,7 @@ else
 fi
 
 
-echo "https://proofofexistence.com/detail/$hash"
+echo "https://proof.bitcoin.xyz/detail/$hash"
 #  2015-10-31  "Please send 5 mBTC or more to: 
 #               14u7yFWKkPw3RiYHVNUgYpvVNHWcREf2ud"
 #               to embed the document's digest in the blockchain.
