@@ -113,7 +113,7 @@ def payment(to, satoshis, _from=None):
 
 def do_check_document(d):
   # FIXME: don't do this plz!!
-  url = 'http://www.proofofexistence.com/api/check?d=%s' % (d)
+  url = 'http://proof.bitcoin.com/api/check?d=%s' % (d)
   result = urlfetch.fetch(url)
   if result.status_code == 200:
     j = json.loads(result.content)
